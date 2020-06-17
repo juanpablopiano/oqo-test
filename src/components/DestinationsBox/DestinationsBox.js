@@ -28,7 +28,7 @@ class DestinationsBox extends Component {
 	componentDidMount() {
 		axios
 			.get(
-				"https://cors-anywhere.herokuapp.com/http://suzukimotos.cl/wp-json/wp/v2/concesionarios"
+				"https://thingproxy.freeboard.io/fetch/http://suzukimotos.cl/wp-json/wp/v2/concesionarios"
 			)
 			.then(async (response) => {
 				const newMarkers = [];
