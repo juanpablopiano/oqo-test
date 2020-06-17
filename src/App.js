@@ -1,5 +1,4 @@
 import React from "react";
-import classes from "./components/DestinationsBox/DestinationsBox.module.css";
 
 /* components */
 import Navbar from "./components/Navbar/Navbar";

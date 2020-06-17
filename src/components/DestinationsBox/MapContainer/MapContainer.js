@@ -20,20 +20,40 @@ const center = {
 };
 const options = {
 	styles: mapStyles,
-	disableDefaultUI: true,
+	disableDefaultUI: false,
 	zommControl: true,
 };
 
-function MapContainer() {
+function MapContainer(props) {
 	const { isLoaded, loadError } = useLoadScript({
 		googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
 		libraries,
-    });
-    
-    const [markers, setMarkers] = useState([]);
+	});
+
+	// const [markers, setMarkers] = useState([]);
 
 	if (loadError) return "Error Loading Maps";
 	if (!isLoaded) return "Loading Maps";
+
+	const markers = [];
+	props.markers.forEach((marker, index) => {
+		markers.push(
+			<Marker
+				zommControl={true}
+				visible={marker.checked}
+				key={index}
+				position={{
+					lat: Number(marker.lat),
+					lng: Number(marker.lng),
+				}}
+				icon={{
+					url:
+						"http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+				}}
+				draggable={false}
+			/>
+		);
+	});
 
 	return (
 		<div className={classes.MapContainer}>
@@ -45,7 +65,9 @@ function MapContainer() {
 				onClick={(event) => {
 					console.log(event);
 				}}
-			></GoogleMap>
+			>
+				{markers}
+			</GoogleMap>
 		</div>
 	);
 }
