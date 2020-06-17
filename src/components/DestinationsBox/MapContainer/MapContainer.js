@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import {
 	GoogleMap,
 	useLoadScript,
-	Marker,
-	InfoWindow,
+	Marker
 } from "@react-google-maps/api";
 
 import classes from "./MapContainer.module.css";
@@ -29,8 +28,6 @@ function MapContainer(props) {
 		googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
 		libraries,
 	});
-
-	// const [markers, setMarkers] = useState([]);
 
 	if (loadError) return "Error Loading Maps";
 	if (!isLoaded) return "Loading Maps";

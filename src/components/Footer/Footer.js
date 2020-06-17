@@ -1,12 +1,11 @@
 import React from "react";
 import classes from "./Footer.module.css";
-import Navbar from "react-bootstrap/Navbar";
 
 const footer = () => {
 	return (
 		<div className={classes.Footer} fixed="bottom">
 			<div className={classes.Content}>
-				<img src="/turbus2.png" width="150px" height="40px"></img>
+				<img src="/turbus2.png" alt="turbus-icon" width="150px" height="40px"></img>
 				<div className={classes.Txt}>
 					Empresa de Transportes Rurales Ltda.
 				</div>
