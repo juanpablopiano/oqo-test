@@ -8,7 +8,6 @@ import MapContainer from "./MapContainer/MapContainer";
 class DestinationsBox extends Component {
 	state = {
 		destionationsList: [],
-		data: [],
 		markers: [],
 	};
 	markerColors = [
@@ -29,8 +28,7 @@ class DestinationsBox extends Component {
 	componentDidMount() {
 		axios
 			.get(
-				/* "https://cors-anywhere.herokuapp.com/http://suzukimotos.cl/wp-json/wp/v2/concesionarios" */
-				"http://localhost:8000/api/concesionarios"
+				"https://cors-anywhere.herokuapp.com/http://suzukimotos.cl/wp-json/wp/v2/concesionarios"
 			)
 			.then(async (response) => {
 				const newMarkers = [];
@@ -67,8 +65,7 @@ class DestinationsBox extends Component {
 					);
 				});
 				this.setState({
-					destionationsList: this.dataDom,
-					data: this.dataList,
+					destionationsList: this.dataDom
 				});
 			});
 	}
