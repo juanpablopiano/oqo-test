@@ -4,11 +4,13 @@ import axios from "axios";
 
 /* componentes */
 import MapContainer from "./MapContainer/MapContainer";
+import Spinner from "../Spinner/Spinner";
 
 class DestinationsBox extends Component {
 	state = {
 		destionationsList: [],
-		markers: [],
+        markers: [],
+        loading: false
 	};
 	markerColors = [
 		"pink-dot.png",
@@ -26,9 +28,10 @@ class DestinationsBox extends Component {
 	dataDom = [];
 
 	componentDidMount() {
+        this.setState({loading: true});
 		axios
 			.get(
-				"https://thingproxy.freeboard.io/fetch/http://suzukimotos.cl/wp-json/wp/v2/concesionarios"
+				"https://cors-anywhere.herokuapp.com/http://suzukimotos.cl/wp-json/wp/v2/concesionarios"
 			)
 			.then(async (response) => {
 				const newMarkers = [];
@@ -62,10 +65,11 @@ class DestinationsBox extends Component {
 								{element.title.rendered}
 							</span>
 						</div>
-					);
+                    );
 				});
 				this.setState({
-					destionationsList: this.dataDom
+                    destionationsList: this.dataDom,
+                    loading: false
 				});
 			});
 	}
@@ -79,6 +83,10 @@ class DestinationsBox extends Component {
 	}
 
 	render() {
+        let destination = this.state.destionationsList;
+        if (this.state.loading) {
+            destination = <Spinner />;
+        }
 		return (
 			<div>
 				<div className={classes.BoxContainer}>
@@ -86,7 +94,7 @@ class DestinationsBox extends Component {
 						<div className={classes.ListHeader}>
 							Seleccionar Destino
 						</div>
-						{this.state.destionationsList}
+						{destination}
 					</div>
 					<MapContainer markers={this.state.markers} />
 				</div>
