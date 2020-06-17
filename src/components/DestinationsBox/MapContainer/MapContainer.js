@@ -1,9 +1,5 @@
 import React from "react";
-import {
-	GoogleMap,
-	useLoadScript,
-	Marker
-} from "@react-google-maps/api";
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
 import classes from "./MapContainer.module.css";
 import mapStyles from "../../../mapStyles";
@@ -58,9 +54,6 @@ function MapContainer(props) {
 				center={center}
 				zoom={10}
 				options={options}
-				onClick={(event) => {
-					console.log(event);
-				}}
 			>
 				{markers}
 			</GoogleMap>
