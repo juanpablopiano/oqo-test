@@ -16,3 +16,16 @@ Por otra parte en el MapContainer, utilicé la librería @react-google-maps/api 
 Y por último, para los colores, creé un array con toros los posibles íconos para los marcadores y pasarlo como prop al componente mapa.
 
 - Para finalizar, luego de terminar la funcionalidad importante, solo restó terminar el layout de la página y arreglar los warnings del código para poder hacer build y subir el proyecto;
+
+# Instalar proyecto
+Instalar dependencias
+```
+npm install
+```
+Iniciar proyecto
+```
+npm start
+```
+
+## Link de la app
+La app se puede ver en este [link](https://jppiano-test.web.app/)
