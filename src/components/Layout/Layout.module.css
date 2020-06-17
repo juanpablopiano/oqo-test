@@ -1,13 +1,17 @@
 .Container {
-    background-image: url('/recurso2.png');
+    position: fi;
     width: 100%;
     margin: 0;
     padding: 0;
-    background-repeat: no-repeat;
-    background-size: cover;
+    
+    
 }
 .ImgContainer {
-    position: relative;
+    background-image: url('/recurso2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: -90px;
 }
 
 .BigImage {
