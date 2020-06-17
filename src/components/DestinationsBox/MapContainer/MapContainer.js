@@ -47,8 +47,7 @@ function MapContainer(props) {
 					lng: Number(marker.lng),
 				}}
 				icon={{
-					url:
-						"http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+					url: `http://maps.google.com/mapfiles/ms/icons/${marker.color}`,
 				}}
 				draggable={false}
 			/>

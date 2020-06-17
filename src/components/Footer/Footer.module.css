@@ -1,0 +1,29 @@
+.Footer {
+    background: radial-gradient(rgb(104, 104, 104), rgb(68, 68, 68));
+    height: 400px;
+    padding: 20px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.Content {
+    width: 25%;
+    margin: 60px 10px;
+}
+
+.Txt {
+    margin: 15px 0;
+    color: white;
+    font-size: 0.8rem;
+}
+.TextContainer {
+    display: flex;
+    align-items: center;
+}
+.Txt i {
+    font-size: 1.3rem;
+    padding: 8px;
+    width: 35px;
+}
+

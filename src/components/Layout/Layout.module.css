@@ -1,0 +1,56 @@
+.Container {
+    background-image: url('/recurso2.png');
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.ImgContainer {
+    position: relative;
+}
+
+.BigImage {
+    margin: 0 auto;
+    padding: 0;
+    width: 80vw;
+    display: block;
+}
+@media (max-width: 800px) {
+    .BigImage {
+        width: 100vw;
+    }
+}
+
+.Text {
+    margin: 0 auto;
+    width: 80vw;
+    text-align: center;
+    font-size: 1.4rem;
+}
+@media (max-width: 600px) {
+    .Text {
+        font-size: 1rem;
+    }
+}
+
+.Text2 {
+    margin: 0 auto;
+    width: 80vw;
+    text-align: center;
+    font-size: 1.6rem;
+}
+@media (max-width: 600px) {
+    .Text2 {
+        font-size: 1rem;
+    }
+}
+
+.Button {
+    margin: 60px auto;
+    display: block;
+    padding: 7px 80px;
+    font-size: 2rem;
+    color: white;
+    background: linear-gradient(to right,rgb(6, 156, 51), rgb(0, 198, 61), rgb(6, 156, 51));
+}
